@@ -1,0 +1,25 @@
+
+    <view class="body page_chat">
+        
+    <scroll-view scroll-y="1" class="chartboard{{$chartboard$focus ? ' fixed' : ''}}">
+        <block  wx:for="{{$chartboard$message}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+            <view class="msgarea{{item.from === 'me' ? ' fromme' : ' other'}}">
+                <image class="icon" src="{{item.icon}}"/>
+                <view class="msg">{{item.msg}}</view>
+                <view class="clearfix"/>
+            </view>
+        </block>
+    </scroll-view>
+
+        
+    <view class="input">
+        <view class="input_layout">
+            <image class="input_icon voice" src="../images/voice.png"/>
+            <image class="input_icon face" src="../images/face.png"/>
+            <image class="input_icon plus" src="../images/plus.png"/>
+            <view class="send{{$myinput$readyToSend.length == 0 ? ' hidden' : ''}}" bindtap="$myinput$send">发送</view>
+            <input bindinput="$myinput$input" value="{{$myinput$readyToSend}}" class="input_text{{$myinput$focusFlag ? ' focusFlag' : ''}}" bindfocus="$myinput$focus" bindblur="$myinput$blur" bindtype="$myinput$input"/>
+        </view>
+    </view>
+
+    </view>

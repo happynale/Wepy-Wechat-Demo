@@ -1,0 +1,2 @@
+@import "./group.wxss";
+.discovery{background-color:#f0eff5;height:100%;padding-top:0rpx}
